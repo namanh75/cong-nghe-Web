@@ -19,7 +19,7 @@ Restore tại localhost:27017
 
 Tên DB là "CNWEB" (nếu chưa đúng thì thay đổi lại)
 
-- Các lệnh chạy Projetc
+- Các lệnh chạy Project
 
 Run sever: `npm run start`
 
