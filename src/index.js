@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const handlebars = require('express-handlebars')
 const app = express()
 const route = require('./routes')
+const db = require('./config/database/index')
 
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -19,10 +20,8 @@ const port = 5000
 //routing
 route(app)
 
-//test
-// app.get('/test', function(req, res){
-//     res.json({name: 'test'});
-// })
+//connect
+db.connect()
 
 //listen
 app.listen(port, function(error){
