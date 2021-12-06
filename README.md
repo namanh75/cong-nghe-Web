@@ -26,7 +26,7 @@ Run sever: `npm run start`
 Run node-sass: `npm run scss`
 
 > ### Phân công nhóm 
-| STT | Họ và tên | Phân công nhóm | 
+| STT | Họ và tên | Nhiệm vụ thực hiện | 
 | ----- | ---------- | -------------- |
 | 1 | Trần Nam Anh (nhóm trưởng) || 
 | 2 | Trần Tuấn Anh            || 
