@@ -1,13 +1,24 @@
 
 class siteController{
     
-    // info of user
+    // home
     index(req, res, next){
-        res.send("info of user")
+        res.render('site/home')
+    }
+
+    //login
+    login(req, res, next){
+        res.render('site/login')
     }
     
+    //register
+    register(req, res, next){
+        res.render('site/register')
+    }
+
+    //admin-page
     adminpage(req, res, next){
-        res.send("views")
+        res.render('site/adminpage')
     }
 
 }

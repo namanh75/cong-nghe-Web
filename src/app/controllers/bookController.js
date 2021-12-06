@@ -4,12 +4,12 @@ class bookController{
     
     // info of schedule
     info(req, res, next){
-        res.send("info of user")
+        res.render('book/info')
     }
 
     //book schedule
     book(req, res, next){
-        res.send("book schedule")
+        res.render("book/book")
     }
 
 }

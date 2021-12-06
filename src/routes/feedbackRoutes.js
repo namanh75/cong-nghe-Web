@@ -9,6 +9,6 @@ router.get("/service", feedbackController.service)
 router.get("/system", feedbackController.system)
 
 //index: select service or system or admin page
-router.get("/", feedbackController.index)
+router.get("/", feedbackController.select)
 
 module.exports = router
