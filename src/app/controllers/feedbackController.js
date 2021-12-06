@@ -4,17 +4,17 @@ class feedbackController{
     
     // service quality
     service(req, res, next){
-        res.send("service quality")
+        res.render('feedback/service')
     }
 
     //system quality
     system(req, res, next){
-        res.render("system quality")
+        res.render("feedback/system")
     }
 
     //select: service or system
-    index(req, res, next){
-        res.render("select service or system")
+    select(req, res, next){
+        res.render("feedback/select")
     }
 }
 
