@@ -1,17 +1,21 @@
 # Bài tập lớn Công nghệ Web và dịch vụ trực tuyến
 > ### Thông tin nhóm
-Mã lớp
+
+Mã lớp: 128742
+
 Nhóm 21
-Đề tài
+
+Đề tài số 20 (Xây dựng website đặt lịch hẹn khám tại bệnh viện sử dụng NodeJS)
+
 Các thành viên
 
 1. Trần Nam Anh (nhóm trưởng) - 20183687
 
 2. Trần Tuấn Anh - 
 
-3. Hoàng Minh Lương
+3. Hoàng Minh Lương - 
 
-4. Nguyễn Tiến Đạt
+4. Nguyễn Tiến Đạt - 
 
 > ### Chỉ dẫn cài đặt và chạy  project
 
