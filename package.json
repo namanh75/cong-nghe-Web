@@ -13,6 +13,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.5",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.14",
     "morgan": "^1.10.0",
     "node-sass": "^6.0.1",
