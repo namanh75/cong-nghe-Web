@@ -3,14 +3,13 @@ const infoRoute = require("./infoRoutes")
 const feedbackRoute = require("./feedbackRoutes")
 const siteRoute = require("./siteRoutes")
 
-
 function route(app){
     
     //book
-    app.use("/book", bookRoute)
+    app.use("/schedule", bookRoute)
 
     //info
-    app.use("/info", infoRoute)
+    app.use("/information", infoRoute)
 
     //feedback
     app.use("/feedback", feedbackRoute)
