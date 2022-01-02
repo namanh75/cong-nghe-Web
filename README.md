@@ -33,7 +33,7 @@ Tên DB là "CNWEB" (nếu chưa đúng thì thay đổi lại)
 
 Run sever: `npm run start`
 
-Run node-sass: `npm run scss`
+<!-- Run node-sass: `npm run scss` -->
 
 > ### Phân công nhóm 
 | STT | Họ và tên | Nhiệm vụ thực hiện | 
