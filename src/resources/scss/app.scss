@@ -1,7 +1,12 @@
 @import 'header.scss';
 $red-color: red;
+$blue-color: blue;
 
 h1{
     color: $red-color;
     background-color: blue;
+}
+h3{
+    color: black;
+    background-color: pink;
 }
