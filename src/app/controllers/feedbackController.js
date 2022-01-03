@@ -6,6 +6,11 @@ class feedbackController{
     system(req, res, next){
         res.render("feedback/system")
     }
+    
+    //add feedback
+    addfeedback(req, res, next){
+        
+    }
 
 }
 

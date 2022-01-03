@@ -10,11 +10,6 @@ class siteController{
     login(req, res, next){
         res.render('site/login')
     }
-
-    //loginpost
-    loginpost(req, res, next){
-
-    }
     
     //register
     register(req, res, next){
