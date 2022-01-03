@@ -1,5 +1,5 @@
-const moongose = require('moongose')
-const Schema = moongose.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const schedules=new Schema({
     iduser: String,
@@ -13,4 +13,4 @@ const schedules=new Schema({
     timestamp: true,
 })
 
-module.exports = moongose.model('schedules', schedules)
+module.exports = mongoose.model('schedules', schedules)

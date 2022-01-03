@@ -1,5 +1,5 @@
-const moongose = require('moongose')
-const Schema = moongose.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const feedbacks=new Schema({
     username: String,
@@ -10,4 +10,4 @@ const feedbacks=new Schema({
     timestamp: true,
 })
 
-module.exports = moongose.model('feedbacks', feedbacks)
+module.exports = mongoose.model('feedbacks', feedbacks)

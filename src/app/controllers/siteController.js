@@ -1,3 +1,5 @@
+const user = require('../models/userModel')
+const jwt =require('jsonwebtoken')
 
 class siteController{
     

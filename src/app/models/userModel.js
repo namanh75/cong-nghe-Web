@@ -1,5 +1,5 @@
-const moongose = require('moongose')
-const Schema = moongose.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const users=new Schema({
     account: {type: String, unique: true},
@@ -14,4 +14,4 @@ const users=new Schema({
     timestamp: true,
 })
 
-module.exports = moongose.model('users', users)
+module.exports = mongoose.model('users', users)
