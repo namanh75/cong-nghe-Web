@@ -5,7 +5,6 @@ const siteController= require("../app/controllers/siteController")
 //views of admin page
 router.get("/admin", siteController.adminpage)
 
-
 //login post
 router.post("/login", siteController.login)
 

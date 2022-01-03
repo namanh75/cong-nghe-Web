@@ -8,7 +8,7 @@ class siteController{
 
     //login
     login(req, res, next){
-        res.render('site/login')
+        
     }
     
     //register

@@ -1,15 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const infoController= require("../app/controllers/infoController")
-const evaluation=require("../app/controllers/evaluationController")
 
 //info post
-router.post('/name', infoController.updateinfo)
-
-//evalution post
-router.post('/evaluation', evaluation.evaluate)
+router.post('/name', infoController.update)
 
 //info user
-router.get('/', infoController.info)
+router.get('/name', infoController.info)
 
 module.exports = router

@@ -1,14 +1,13 @@
 
-
 class infoController{
     
     // info of user
     info(req, res, next){
-        res.render("infoUser/userInfo")
+        res.render("information/userInformation")
     }
     
     //update information
-    updateinfo(req, res, next) {
+    update(req, res, next) {
 
     }
 
