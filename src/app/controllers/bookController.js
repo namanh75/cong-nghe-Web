@@ -11,6 +11,11 @@ class bookController{
     book(req, res, next){
         res.render("book/book")
     }
+    
+    //book post
+    bookpost(req, res, next){
+        
+    }
 
 }
 
