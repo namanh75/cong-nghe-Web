@@ -16,7 +16,10 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.5",
     "jsonwebtoken": "^8.5.1",
+<<<<<<< HEAD
+=======
     "method-override": "^3.0.0",
+>>>>>>> 377799f8909253d3455ba595368ff5c88fbfe7a0
     "mongoose": "^6.0.14",
     "morgan": "^1.10.0",
     "node-sass": "^6.0.1",
