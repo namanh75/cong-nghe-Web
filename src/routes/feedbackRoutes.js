@@ -2,7 +2,10 @@ const express = require('express')
 const router = express.Router()
 const feedbackController= require("../app/controllers/feedbackController")
 
-//index: select service or system or admin page
+//feedback system
 router.get("/", feedbackController.system)
+
+//feedback post
+router.post("/", feedbackController.addfeedback)
 
 module.exports = router
