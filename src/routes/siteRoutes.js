@@ -3,13 +3,13 @@ const router = express.Router()
 const siteController= require("../app/controllers/siteController")
 
 //views of admin page
-router.get("/admin-page", siteController.adminpage)
+router.get("/admin", siteController.adminpage)
 
-//register
-router.get("/register", siteController.register)
+//login post
+router.post("/login", siteController.login)
 
-//login
-router.get("/login", siteController.login)
+//register post
+router.post("/register", siteController.register)
 
 //home
 router.get('/', siteController.index)
