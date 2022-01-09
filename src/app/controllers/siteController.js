@@ -78,7 +78,7 @@ class siteController {
                     console.log(err)
                     res.render('site/page404', {
                         layout: false,
-                        massage: "Không tìm thấy tài khoản trên hệ thống, vui lòng đăng ký!!!"
+                        massage: "Không tìm thấy tài khoản trên hệ thống, hãy đăng nhập lại hoặc tạo tài khoản mới!!!"
                     })
                 })
         }
@@ -128,7 +128,7 @@ class siteController {
                             console.log(err)
                             res.render('site/page404', {
                                 layout: false,
-                                massage: "Không tìm thấy tài khoản trên hệ thống, vui lòng đăng ký"
+                                massage: "Không tìm thấy tài khoản trên hệ thống, hãy thử đăng nhập lại hoặc tạo tài khoảng mới"
                             })
                         })
                 }

@@ -6,28 +6,35 @@ class infoController {
     // info of user
     info(req, res, next) {
         if (req.cookies.token) {
-            jwt.verify(req.cookies.token, 'nhom21', function (err, tokendata) {
+            jwt.verify(req.cookies.token, 'nhom21', function (err, datatoken) {
                 if (err){
                     console.error(err)
-                    res.send('xác thực tài khoản thất bại')
+                    res.render('site/page404', {
+                        layout: false,
+                        massage: "Xác thực tài khoản thất bại"
+                    })
                 } 
                 else {
                     user.findOne({ account: datatoken.account })
                         .then(userdata => {
-                            userdata = userdata ? userdata.toOject() : userdata
-                            res.render("information/userInformation", { 
-                                userdata: userdata
-                            })
+                            // userdata = userdata ? userdata.toOject : userdata
+                            // res.render("information/userInformation", { 
+                            //     userdata: userdata
+                            // })
+                            res.send(userdata)
                         })
                         .catch(err => {
                             console.error(err)
-                            res.send('không tìm thấy dữ liệu người dùng. Hãy thử đăng nhập')
+                            res.render('site/page404', {
+                                layout: false,
+                                massage: "Không tìm thấy dữ liệu người dùng. Hãy thử đăng nhập lại hoặc đăng ký"
+                            })
                         })
                 }
             })
         }
         else{
-            res.send('Vui lòng đăng nhập')
+            res.redirect('/')
         }
     }
 
