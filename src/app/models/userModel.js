@@ -8,7 +8,7 @@ const users=new Schema({
     age: Number,
     gender: String,
     address: String,
-    role: String,
+    role: Number,
     description: String,
 }, {
     timestamp: true,

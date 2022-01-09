@@ -6,9 +6,12 @@ const schedules=new Schema({
     username: String,
     iddoctor: String, 
     doctorname: String,
+    phone: String,
+    birthday: String,
+    address: String,
     time: String,
-    mode: String,
     description: String,
+    
 }, {
     timestamp: true,
 })

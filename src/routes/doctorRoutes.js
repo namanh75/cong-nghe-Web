@@ -2,8 +2,7 @@ const express = require('express')
 const router = express.Router()
 const doctorController= require('../app/controllers/doctorController')
 
-//schedule
-router.get('/schedule?d=:name', doctorController.schedule)
+router.get('/schedule', doctorController.schedule)
 
 //post schedule
 router.post('/schedule', doctorController.book)
