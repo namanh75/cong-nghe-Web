@@ -27,34 +27,39 @@
         </h1>
         <div class="row">
             <div class="image">
-                <img src="/image/bs1.jpg" alt="">
+                <img src="/image/{{doctor.stt}}.jpg" alt="">
                 <h2>{{doctor.name}}</h3>
                     <p>{{doctor.description}}</p>
             </div>
             <form action="/doctor/schedule" method="post">
-                <h3>sẽ có nhân viên liên hệ với bạn qua số điện thoại để hẹn giờ khám</h3>
+                
                 <div class="inputBox">
                     <h3>Họ và Tên</h3>
-                    <input type="text" placeholder="" name="name" disabled="true">
+                    <input type="text" name="name" disabled="true" value="{{userdata.name}}">
+                </div>
+                <div class="inputBox">
+                    <h3>Khám cho ai</h3>
+                    <input type="text" name="for" placeholder="Bạn đăng ký khám cho bản thân hay cho người khác?" >
                 </div>
                 <div class="inputBox">
                     <h3>Số điện thoại</h3>
-                    <input type="text" placeholder="" name="phone">
+                    <input type="text" placeholder="Để lại số điện thoại để nhân viên có thể liên hệ lại với bạn" name="phone">
                 </div>
                 <div class="inputBox">
-                    <h3>Năm sinh</h3>
-                    <input type="date" name="birthday">
+                    <h3>Năm sinh (của người muốn khám)</h3>
+                    <input type="date" name="birthday" placeholder="Bạn sinh năm bao nhiêu">
                 </div>
 
                 <div class="inputBox">
                     <h3>Địa chỉ</h3>
-                    <input type="text" placeholder="" name="address">
+                    <input type="text" placeholder="Địa chỉ nhà bạn ở đâu?" name="address">
                 </div>
                 <div class="inputBox">
                     <h3>Lý do khám</h3>
-                    <textarea class="rea" cols="10" rows="5" name="description"></textarea>
+                    <textarea class="rea" cols="10" rows="5" name="description" placeholder="Bạn đang cảm thấy như thế nào?"></textarea>
                 </div>
                 <input type="submit" class="btn" value="book now">
+                
             </form>
         </div>
     </section>

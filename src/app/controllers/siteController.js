@@ -67,7 +67,7 @@ class siteController {
                         }
                         else {
                             res.cookie('token', token, {
-                                maxAge: 3600 * 1000,
+                                maxAge: 3600 * 1000 * 24,
                                 httpOnly: true
                             })
                             res.redirect('/')
@@ -87,8 +87,9 @@ class siteController {
     //register post
     register(req, res, next) {
         console.log(req.body)
-        formData = req.body
+        var formData = req.body
         formData.role = 1
+        console.log(formData)
         const userdata = new user(formData)
         userdata.save()
             .then(data => {
@@ -118,7 +119,21 @@ class siteController {
                 else {
                     user.findOne({ account: data.account })
                         .then(userdata => {
-                            if (userdata.role == 3) res.render('site/adminpage')
+                            if (userdata.role == 3) {
+                                user.find({}).then(users => {
+                                    users = users.map(user => user.toObject())
+                                    res.render('site/adminpage', {
+                                        users
+                                    })
+                                }).catch(err => {
+                                    console.log(err)
+                                    res.render('site/page404', {
+                                        layout: false,
+                                        massage: "Có lỗi xảy ra với sever"
+                                    })
+                                })
+
+                            }
                             else res.render('site/page404', {
                                 layout: false,
                                 massage: "Bạn không thể truy cập vào trang này"

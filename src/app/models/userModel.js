@@ -10,6 +10,7 @@ const users=new Schema({
     address: String,
     role: Number,
     description: String,
+    stt: String,
 }, {
     timestamp: true,
 })

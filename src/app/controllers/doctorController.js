@@ -29,11 +29,13 @@ class doctorController {
                     // var small=new user(data)
                     user.findOne({ account: data.account })
                         .then(userdata => {
+                            userdata= userdata ? userdata.toObject() : userdata 
                             user.findOne({ name: req.query.d })
                                 .then(doctor => {
                                     doctor = doctor ? doctor.toObject() : doctor
                                     res.render('doctor/schedule', {
-                                        doctor: doctor
+                                        doctor: doctor,
+                                        userdata: userdata
                                     })
                                 })
                                 .catch(err => {

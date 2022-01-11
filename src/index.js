@@ -17,8 +17,37 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(morgan('combined'))
 
 //views engine
-app.engine('handlebars', handlebars())
-app.set('view engine', 'handlebars')
+app.engine('handlebars', handlebars({
+    helpers: {
+        changerole: function(role){
+            if(role == 1) return 'User'
+            if(role == 2) return 'Doctors'
+            if(role == 3) return 'Admin'
+        },
+        counteruser: function(users){
+            var count = 0
+            for(var i = 0; i < users.length; i++){
+                if(users[i].role==1) count+=1
+            }
+            return count
+        },
+        counterdoctor: function(users){
+            var count = 0
+            for(var i = 0; i < users.length; i++){
+                if(users[i].role==2) count+=1
+            }
+            return count
+        },
+        counteradmin: function(users){
+            var count = 0
+            for(var i = 0; i < users.length; i++){
+                if(users[i].role==3) count+=1
+            }
+            return count
+        }
+    }
+}))
+app.set('view engine', 'handlebars') //đuôi file là handlebar
 app.set('views',path.join(__dirname, 'resources/views'))
 
 //body parser

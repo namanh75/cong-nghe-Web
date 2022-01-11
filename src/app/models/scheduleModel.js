@@ -6,6 +6,7 @@ const schedules=new Schema({
     username: String,
     iddoctor: String, 
     doctorname: String,
+    for: String,
     phone: String,
     birthday: String,
     address: String,
