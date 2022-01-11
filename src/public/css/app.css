@@ -929,6 +929,108 @@ section {
   --orange:#ffa500; }
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  color: #000; }
+
+body {
+  background-color: yellow; }
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--orange);
+  color: #fff;
+  padding: .8rem 3rem;
+  border: 0.2rem solid var(--orange);
+  cursor: pointer;
+  font-size: 1.7rem; }
+
+.button:hover {
+  background: rgba(255, 165, 0, 0.2);
+  color: var(--orange); }
+
+.user-profile .card {
+  /* padding: 10px; */
+  margin-right: 24px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
+
+.user-profile .card.id {
+  width: 22.5%;
+  height: 250px;
+  margin-left: 14%;
+  margin-top: 150px;
+  float: left; }
+
+.user-profile .card.general {
+  width: 47%;
+  height: 250px;
+  margin-right: 14%;
+  margin-top: 150px;
+  float: right; }
+
+.user-profile .card.other {
+  width: 72%;
+  height: 200px;
+  margin-left: 14%;
+  margin-right: 14%;
+  float: left; }
+
+.user-profile .card.id .card-header .profile_img {
+  margin: auto;
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%; }
+
+.user-profile .card.id .card-header h3 {
+  text-align: center; }
+
+.user-profile .card.id .card-body {
+  margin-top: 30px;
+  padding-left: 15px;
+  border-top: 2px black; }
+
+.user-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700; }
+
+.user-profile .card p {
+  font-size: 16px;
+  color: #000; }
+
+.user-profile .table th,
+.user-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000; }
+
+@media only screen and (max-width: 1000px) {
+  .user-profile .card.id {
+    width: 80%;
+    margin: auto;
+    float: none; }
+  .user-profile .card.general {
+    width: 80%;
+    margin: auto;
+    float: none; }
+  .user-profile .card.other {
+    width: 80%;
+    margin: auto;
+    float: none; } }
+
+:root {
+  --orange:#ffa500; }
+
+* {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -1074,6 +1176,130 @@ section {
   color: #666;
   font-size: 1.5rem;
   padding: 1rem 0; }
+
+.vung-bao {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+@media (min-width: 768px) {
+  .vung-bao {
+    width: 750px; } }
+
+@media (min-width: 992px) {
+  .vung-bao {
+    width: 970px; } }
+
+@media (min-width: 1200px) {
+  .vung-bao {
+    width: 1170px; } }
+
+.bs-tieude {
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: bold; }
+
+.feedback-item {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-top: 1px solid grey; }
+
+.feedback-name {
+  font-size: 15px;
+  font-weight: bold; }
+
+.feedback-title {
+  font-size: 15px;
+  font-weight: bold; }
+
+.feedback-info {
+  font-size: 13px;
+  cursor: pointer; }
+
+.feedback-content {
+  padding-top: 5px;
+  font-size: medium; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background-image: white; }
+
+.container {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #333; }
+
+.container h1 {
+  font-size: 160px;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: #333; }
+
+.container a {
+  text-decoration: none;
+  background: #ffa500;
+  color: #fff;
+  padding: 12px 24px;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: 0.4s; }
+
+.container a:hover {
+  background: #ffa500; }
+
+.vung-bao {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+@media (min-width: 768px) {
+  .vung-bao {
+    width: 750px; } }
+
+@media (min-width: 992px) {
+  .vung-bao {
+    width: 970px; } }
+
+@media (min-width: 1200px) {
+  .vung-bao {
+    width: 1170px; } }
+
+.bs-tieude {
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: bold; }
+
+.feedback-item {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-top: 1px solid grey; }
+
+.feedback-name {
+  font-size: 15px;
+  font-weight: bold; }
+
+.feedback-title {
+  font-size: 15px;
+  font-weight: bold; }
+
+.feedback-info {
+  font-size: 13px;
+  cursor: pointer; }
+
+.feedback-content {
+  padding-top: 5px;
+  font-size: medium; }
 
 .vung-bao {
   padding-right: 15px;

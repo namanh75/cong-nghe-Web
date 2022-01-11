@@ -17,11 +17,11 @@ class infoController {
                 else {
                     user.findOne({ account: datatoken.account })
                         .then(userdata => {
-                            // userdata = userdata ? userdata.toOject : userdata
-                            // res.render("information/userInformation", { 
-                            //     userdata: userdata
-                            // })
-                            res.send(userdata)
+                            userdata = userdata ? userdata.toOject : userdata
+                            res.render("information/userInformation", { 
+                                userdata: userdata
+                            })
+                            
                         })
                         .catch(err => {
                             console.error(err)

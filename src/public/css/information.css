@@ -1,0 +1,101 @@
+:root {
+  --orange:#ffa500; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  color: #000; }
+
+body {
+  background-color: yellow; }
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--orange);
+  color: #fff;
+  padding: .8rem 3rem;
+  border: 0.2rem solid var(--orange);
+  cursor: pointer;
+  font-size: 1.7rem; }
+
+.button:hover {
+  background: rgba(255, 165, 0, 0.2);
+  color: var(--orange); }
+
+.user-profile .card {
+  /* padding: 10px; */
+  margin-right: 24px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
+
+.user-profile .card.id {
+  width: 22.5%;
+  height: 250px;
+  margin-left: 14%;
+  margin-top: 150px;
+  float: left; }
+
+.user-profile .card.general {
+  width: 47%;
+  height: 250px;
+  margin-right: 14%;
+  margin-top: 150px;
+  float: right; }
+
+.user-profile .card.other {
+  width: 72%;
+  height: 200px;
+  margin-left: 14%;
+  margin-right: 14%;
+  float: left; }
+
+.user-profile .card.id .card-header .profile_img {
+  margin: auto;
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%; }
+
+.user-profile .card.id .card-header h3 {
+  text-align: center; }
+
+.user-profile .card.id .card-body {
+  margin-top: 30px;
+  padding-left: 15px;
+  border-top: 2px black; }
+
+.user-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700; }
+
+.user-profile .card p {
+  font-size: 16px;
+  color: #000; }
+
+.user-profile .table th,
+.user-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000; }
+
+@media only screen and (max-width: 1000px) {
+  .user-profile .card.id {
+    width: 80%;
+    margin: auto;
+    float: none; }
+  .user-profile .card.general {
+    width: 80%;
+    margin: auto;
+    float: none; }
+  .user-profile .card.other {
+    width: 80%;
+    margin: auto;
+    float: none; } }
