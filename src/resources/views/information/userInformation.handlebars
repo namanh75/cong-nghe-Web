@@ -29,6 +29,7 @@
         <span>i</span>
         <span>o</span>
         <span>n</span>
+        <br><br>
 
     </h1>
 
@@ -45,7 +46,7 @@
 
             <div class="content">
                 <h3>{{userdata.name}} ({{changerole userdata.role}})</h3>
-                <p>{{userdata.description}}</p>
+                <p></p>
                 <div class="box-container">
                     <div class="box">
                         <p> <span> Tên tài khoản : </span> {{userdata.account}} </p>
@@ -57,6 +58,7 @@
                     <div class="box">
                         <p> <span> Email : </span>{{userdata.email}} </p>
                         <p> <span> Quốc tịch : </span> {{userdata.origin}} </p>
+                        <p> <span> Mô tả bản thân : </span> {{userdata.description}} </p>
                     </div>
                 </div>
                 <a href="/logout" class="btn">Đăng xuất</a>
@@ -66,24 +68,25 @@
                 <i class="fas fa-times" id="off"></i>
                 <form action="/information?_method=PUT" method="POST">
                     <h3>Sửa thông tin</h3>
-                    <input type="text" class="box" placeholder="Tên tài khoản" name="account" value="{{userdata.account}}" readonly="true">
+                    <input type="text" class="box" placeholder="Tên tài khoản" name="account"
+                        value="{{userdata.account}}" readonly="true">
                     <input type="password" class="box" placeholder="Mật khẩu mới" value="{{userdata.password}}">
-                    <input type="text" class="box" placeholder="Tên của bạn" name="name" value="{{userdata.name}}">
+                    <input type="text" class="box" placeholder="Họ và tên" name="name" value="{{userdata.name}}">
+                    <input type="text" class="box" placeholder="Tuổi" name="age" value="{{userdata.age}}">
                     <input type="text" class="box" placehoder="Giới tính" name="gender" value="{{userdata.gender}}">
                     <input type="email" class="box" placeholder="Địa chỉ email" name="email" value="{{userdata.email}}">
                     <input type="tel" class="box" placeholder="Số điện thoại" name="phone" value="{{userdata.phone}}">
                     <input type="text" class="box" placeholder="Địa chỉ" name="address" value="{{userdata.address}}">
-                    <input type="text" class="box" placeholder="Mô tả bản thân" name="description" value="{{userdata.description}}">
+                    <input type="text" class="box" placeholder="Mô tả bản thân" name="description"
+                        value="{{userdata.description}}">
                     <input type="text" class="box" placeholder="Quốc tịch" name="origin" value="{{userdata.origin}}">
                     <input type="submit" value="Lưu thông tin" class="btn">
                 </form>
-
             </div>
         </div>
 
 
         <section class="experience" id="experience">
-
             <h1 class="heading">
                 <span>c</span>
                 <span>a</span>
@@ -94,7 +97,6 @@
                 <span>a</span>
                 <span>r</span>
             </h1>
-
             <div class="box-container">
                 {{#each schedules}}
                 <div class="box">
