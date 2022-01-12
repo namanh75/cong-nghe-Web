@@ -20,11 +20,13 @@ app.use(morgan('combined'))
 //views engine
 app.engine('handlebars', handlebars({
     helpers: {
+        //change role
         changerole: function(role){
             if(role == 1) return 'User'
             if(role == 2) return 'Doctors'
             if(role == 3) return 'Admin'
         },
+        //count user
         counteruser: function(users){
             var count = 0
             for(var i = 0; i < users.length; i++){
@@ -32,6 +34,7 @@ app.engine('handlebars', handlebars({
             }
             return count
         },
+        //count doctor
         counterdoctor: function(users){
             var count = 0
             for(var i = 0; i < users.length; i++){
@@ -39,6 +42,7 @@ app.engine('handlebars', handlebars({
             }
             return count
         },
+        //count admin
         counteradmin: function(users){
             var count = 0
             for(var i = 0; i < users.length; i++){
@@ -46,16 +50,14 @@ app.engine('handlebars', handlebars({
             }
             return count
         },
+        //count start 1
         stt: function(index){  
             return index+=1
         },
+        //get time
         gettime: function(){
             return new Date()
         },
-        cuttime: function(stringtime){
-            var time=pascalCase(stringtime)
-            return time.slice(0, 25)
-        }
     }
 }))
 app.set('view engine', 'handlebars') //đuôi file là handlebar

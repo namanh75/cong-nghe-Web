@@ -21,7 +21,7 @@ class infoController {
                             userdata = userdata ? userdata.toObject() : userdata
                             schedule.find({ accountuser: userdata.account })
                                 .then(schedules => {
-                                    schedules =schedules.map(schedule => schedule.toObject())
+                                    schedules = schedules.map(schedule => schedule.toObject())
                                     res.render("information/userInformation", {
                                         userdata: userdata,
                                         schedules: schedules
@@ -49,7 +49,7 @@ class infoController {
 
     //update information
     update(req, res, next) {
-        jwt(req.cookies.token, 'nhom21', function (err, tokendata) {
+        jwt.verify(req.cookies.token, 'nhom21', function (err, tokendata) {
             if (err) {
                 console.error(err)
                 res.send('xác thực tài khoản thất bại, vui lòng đăng nhập lại')
@@ -58,10 +58,17 @@ class infoController {
                 user.findOne({ account: tokendata.account })
                     .then(userdata => {
                         user.updateOne({ account: userdata.account }, req.body)
-                            .then(() => {
-                                console.log('Update thành côn')
+                            .then(data => {
+                                console.log('Update thành công')
+                                console.log(data)
+                                res.redirect('/information')
                             })
-                            .catch(err => console.error(err))
+                            .catch(err => {
+                                console.error(err)
+                                res.render('site/page404',{
+                                    massage: 'đã có lỗi xảy ra với sever'
+                                })
+                            })
                     })
                     .catch(err => console.error(err))
             }

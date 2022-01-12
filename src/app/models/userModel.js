@@ -11,6 +11,8 @@ const users=new Schema({
     address: String,
     role: Number,
     description: String,
+    origin: String,
+    email: String,
     stt: String,
 }, {
     timestamps: true,
