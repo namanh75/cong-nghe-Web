@@ -3,166 +3,117 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HustCARE</title>
+    <title>complete responsive personal portfolio website design tutorial</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
     <link rel="stylesheet" href="/css/information.css">
+
 </head>
 
 <body>
 
-    <div class="user-profile">
-        <div class="container">
-            <div class="row">
-                <!-- <div>
-                    <button class="button">Đăng xuất</button>
-                    <button class="button">Xem lịch khám bệnh</button>
-                </div> -->
+    <h1 class="heading">
+        <span>i</span>
+        <span>n</span>
+        <span>f</span>
+        <span>o</span>
+        <span>r</span>
+        <span>m</span>
+        <span>a</span>
+        <span>t</span>
+        <span>i</span>
+        <span>o</span>
+        <span>n</span>
 
-                <div class="card id">
-                    <div class="card-header">
-                        <img class="profile_img" src=".\images\bs1.jpg" alt="user dp">
-                        <h3>Nguyễn Duy Hưng</h3>
+    </h1>
+
+
+    <section class="about" id="about">
+
+
+
+        <div class="row-1">
+
+            <div class="image">
+                <img src="/image/user.svg" alt="">
+            </div>
+
+            <div class="content">
+                <h3>{{userdata.name}} ({{changerole userdata.role}})</h3>
+                <p>{{userdata.description}}</p>
+                <div class="box-container">
+                    <div class="box">
+                        <p> <span> Tên tài khoản : </span> {{userdata.account}} </p>
+                        <p> <span> Tuổi : </span> {{userdata.age}} </p>
+                        <p> <span> Giới tính : </span> {{userdata.gender}} </p>
+                        <p> <span> Địa chỉ : </span> {{userdata.address}}</p>
+                        <p> <span> SĐT : </span> {{userdata.phone}} </p>
                     </div>
-                    <div class="card-body">
-                        <p><strong>User ID:</strong>321000001</p>
+                    <div class="box">
+                        <p> <span> Email : </span>{{userdata.email}} </p>
+                        <p> <span> Quê quán : </span> {{userdata.origin}} </p>
                     </div>
                 </div>
-                <div class="card general">
-                    <div class="card-header">
-                        <h3><i></i>Thông tin chung</h3>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <tr>
-                                <th width="30%">Họ tên</th>
-                                <td width="2%">:</td>
-                                <td>Nguyễn Duy Hưng</td>
-                            </tr>
-                            <tr>
-                                <th width="30%">Năm sinh </th>
-                                <td width="2%">:</td>
-                                <td>1968</td>
-                            </tr>
-                            <tr>
-                                <th width="30%">Giới tinh</th>
-                                <td width="2%">:</td>
-                                <td>Nam</td>
-                            </tr>
-                            <tr>
-                                <th width="30%">Địa chỉ</th>
-                                <td width="2%">:</td>
-                                <td>207 Phố Huế - Hai Bà Trưng - Hà Nội</td>
-                            </tr>
-                            <tr>
-                                <th width="30%">Số điện thoại</th>
-                                <td width="2%">:</td>
-                                <td>0370234341</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card other">
-                    <div class="card-header">
-                        <h3><i></i>Thông tin lịch khám</h3>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <tr>
-                                <th width="30%">Ngày khám</th>
-                                <td width="2%"></td>
-                                <td>Bác sĩ khám</td>
-                                <td width="2%"></td>
-                                <td>Lí do khám</td>
-                                <td width="2%"></td>
-                                <td>Chi tiết</td>
-                            </tr>
-                            <tr>
-                                <th width="30%">12-2 </th>
-                                <td width="2%"></td>
-                                <td>Nguyễn Duy Hưng</td>
-                                <td width="2%"></td>
-                                <td>Đau đầu</td>
-                                <td width="2%"></td>
-                                <td><button>Xem chi tiết</button></td>
-                            </tr>
-                            <tr>
-                                <th width="30%">30-7</th>
-                                <td width="2%"></td>
-                                <td>Nguyễn Duy Hưng</td>
-                                <td width="2%"></td>
-                                <td>Đau đầu</td>
-                                <td width="2%"></td>
-                                <td><button>Xem chi tiết</button></td>
-                            </tr>
-                            <tr>
-                                <th width="30%">20-8</th>
-                                <td width="2%"></td>
-                                <td>Nguyễn Duy Hưng</td>
-                                <td width="2%"></td>
-                                <td>Đau đầu</td>
-                                <td width="2%"></td>
-                                <td><button>Xem chi tiết</button></td>
-                            </tr>
-                        </table>
-                    </div>
+                <a href="/logout" class="btn">Đăng xuất</a>
+                <a href="#" class="btn" id="edit">Sửa thông tin</a>
+            </div>
+            <div class="editinfo">
 
+                <i class="fas fa-times" id="off"></i>
 
-                </div>
-                <div class="card other">
-                    <div class="card-header">
-                        <h3><i></i>Thông tin lịch khám</h3>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <tr>
-                                <th width="30%">Ngày khám</th>
-                                <td width="2%"></td>
-                                <td>Bác sĩ khám</td>
-                                <td width="2%"></td>
-                                <td>Lí do khám</td>
-                                <td width="2%"></td>
-                                <td>Chi tiết</td>
-                            </tr>
-                            <tr>
-                                <th width="30%">12-2 </th>
-                                <td width="2%"></td>
-                                <td>Nguyễn Duy Hưng</td>
-                                <td width="2%"></td>
-                                <td>Đau đầu</td>
-                                <td width="2%"></td>
-                                <td><button>Xem chi tiết</button></td>
-                            </tr>
-                            <tr>
-                                <th width="30%">30-7</th>
-                                <td width="2%"></td>
-                                <td>Nguyễn Duy Hưng</td>
-                                <td width="2%"></td>
-                                <td>Đau đầu</td>
-                                <td width="2%"></td>
-                                <td><button>Xem chi tiết</button></td>
-                            </tr>
-                            <tr>
-                                <th width="30%">20-8</th>
-                                <td width="2%"></td>
-                                <td>Nguyễn Duy Hưng</td>
-                                <td width="2%"></td>
-                                <td>Đau đầu</td>
-                                <td width="2%"></td>
-                                <td><button>Xem chi tiết</button></td>
-                            </tr>
-                        </table>
-                    </div>
+                <form action="">
+                    <h3>Sửa thông tin</h3>
+                    <input type="text"><input type="text"><input type="text">
+                    <input type="email" class="box" placeholder="Nhập địa chỉ email mới">
+                    <input type="text" class="box" placeholder="Địa chỉ mới">
+                    <input type="password" class="box" placeholder="Nhập mật khẩu cũ">
+                    <input type="password" class="box" placeholder="Nhập mật khẩu mới">
+                    <input type="tel" class="box" placeholder="Nhập số điện thoại mới">
+                    <input type="submit" value="Lưu " class="btn">
+                </form>
 
-
-                </div>
             </div>
         </div>
-    </div>
 
 
+        <section class="experience" id="experience">
 
+            <h1 class="heading">
+                <span>c</span>
+                <span>a</span>
+                <span>l</span>
+                <span>e</span>
+                <span>n</span>
+                <span>d</span>
+                <span>a</span>
+                <span>r</span>
+            </h1>
+
+            <div class="box-container">
+                {{#each schedules}}
+                <div class="box">
+                    <div class="content">
+                        <span> {{this.createdAt}}</span>
+                        <h3>Lịch đăng ký khám bệnh thứ {{stt @index}} của tài khoản {{this.username}} </h3>
+                        <p>Bác sĩ khám: {{this.doctorname}}</p>
+                        <p>Tên bệnh nhân: {{this.for}}</p>
+                        <p>Ngày sinh: {{this.birthday}}</p>
+                        <p>SĐT: {{this.phone}}</p>
+                        <p>Địa chỉ: {{this.address}}</p>
+                        <p>Lý do khám: {{this.description}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+    </section>
 </body>
-<script src="script.js"></script>
-
+<script src="/js/information.js"></script>
 
 </html>

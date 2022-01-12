@@ -2,19 +2,17 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const schedules=new Schema({
-    iduser: String,
+    accountuser: String,
     username: String,
-    iddoctor: String, 
     doctorname: String,
     for: String,
     phone: String,
     birthday: String,
     address: String,
-    time: String,
     description: String,
     
 }, {
-    timestamp: true,
+    timestamps: true,
 })
 
 module.exports = mongoose.model('schedules', schedules)

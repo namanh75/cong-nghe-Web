@@ -11,6 +11,9 @@ router.post("/login", siteController.login)
 //register post
 router.post("/register", siteController.register)
 
+//logout
+router.get('/logout', siteController.logout)
+
 //home
 router.get('/', siteController.index)
 

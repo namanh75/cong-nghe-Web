@@ -1,4 +1,5 @@
 const user = require('../models/userModel')
+const schedule = require('../models/scheduleModel')
 const jwt = require('jsonwebtoken')
 
 class doctorController {
@@ -29,7 +30,7 @@ class doctorController {
                     // var small=new user(data)
                     user.findOne({ account: data.account })
                         .then(userdata => {
-                            userdata= userdata ? userdata.toObject() : userdata 
+                            userdata = userdata ? userdata.toObject() : userdata
                             user.findOne({ name: req.query.d })
                                 .then(doctor => {
                                     doctor = doctor ? doctor.toObject() : doctor
@@ -76,11 +77,20 @@ class doctorController {
                     res.render('site/page404')
                 }
                 else {
-                    // var small=new user(data)
                     user.findOne({ account: data.account })
                         .then(userdata => {
-                            user.findOne({ account: req.query.d })
+                            user.findOne({ name: req.query.d })
                                 .then(doctordata => {
+                                    var formData = req.body
+                                    formData.username = userdata.name
+                                    formData.doctorname = doctordata.name
+                                    formData.accountuser = userdata.account
+                                    console.log(formData)
+                                    var small = new schedule(formData)
+                                    small.save().then(success => {
+                                        console.log('Lưu dữ liệu thành công')
+                                        res.redirect('/information')
+                                    }).catch(err => { console.log(err) })
 
                                 })
                                 .catch(err => {
@@ -91,7 +101,6 @@ class doctorController {
                             console.log(err)
                             res.send('vui lòng đăng ký')
                         })
-                    console.log(req.body)
                 }
             })
         }

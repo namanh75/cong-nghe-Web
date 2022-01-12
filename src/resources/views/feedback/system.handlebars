@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/css/feedback-2.css">
     <link rel="stylesheet" href="/css/feedback.css">
-
 </head>
 
 <body>
@@ -27,15 +26,15 @@
 
         <div class="row">
             <div class="image">
-                <img src="images/rating.svg" style="border-radius: 50%;" alt="">
+                <img src="/image/rating.svg" style="border-radius: 50%;" alt="">
             </div>
             <form action="/feedback" method="post">
                 <div class="inputBox">
                     <input type="text" placeholder="Tên của bạn là gì?" name="name">
-                    <select name="about">
+                    <select name="title">
                         <option value="">Nhấn để lựa chọn</option>
-                        <option value="system">Phản hồi về hệ thống</option>
-                        <option value="doctor">Phản hồi về bác sĩ</option>
+                        <option value="Phản hồi về chất lượng hệ thống">Phản hồi về chất lượng hệ thống</option>
+                        <option value="Phản hồi về bác sĩ">Phản hồi về bác sĩ</option>
                     </select>
                 </div>
                 <textarea placeholder="Nội dung mà bạn muốn đánh giá là gì?" name="content" id="" cols="30"
@@ -43,11 +42,11 @@
                 <div class="inputBox">
                     <select name="rate">
                         <option value="">Lựa chọn mức độ hài lòng</option>
-                        <option value="5">Rất hài lòng</option>
-                        <option value="4">Hài lòng</option>
-                        <option value="3">Bình thường</option>
-                        <option value="2">Không hài lòng</option>
-                        <option value="1">Rất tệ</option>
+                        <option value="5">Rất hài lòng (5 sao)</option>
+                        <option value="4">Hài lòng (4 sao)</option>
+                        <option value="3">Bình thường (3 sao)</option>
+                        <option value="2">Không hài lòng (2 sao)</option>
+                        <option value="1">Rất tệ (1 sao)</option>
                     </select>
                 </div>
                 <input type="submit" class="btn" value="Gửi phản hồi">
@@ -55,23 +54,18 @@
         </form>
 
         </div>
-        <div style="height: 100px;"> </div>
+
         <div class="bs-phanhoi" id="bs-phanhoi">
             <div class="vung-bao">
                 <h2 class="bs-tieude">Phản hồi của người dùng</h2>
                 <div class="feedback-list">
+                    {{#each feedbacks}}
                     <div class="feedback-item">
-                        <div class="feedback-name">Đặng Tuấn Khang
-                        </div>
-                        <div class="feedback-title">Phản hồi về hệ thống
-                        </div>
-                        <div class="feedback-content"> Giao diện ổn, dễ dùng, đáp ứng đủ nhu cầu của mình</div>
+                        <div class="feedback-title">{{this.title}} ({{this.rate}} sao từ {{changerole this.userrole}})</div>
+                        <div class="feedback-name">{{this.username}}</div>
+                        <div class="feedback-content">{{this.content}}</div>
                     </div>
-                    <div class="feedback-item">
-                        <div class="feedback-name">Vũ Tuệ Nhi</div>
-                        <div class="feedback-title">Phản hồi về bác sĩ</div>
-                        <div class="feedback-content">Bác sĩ tận tình nhưng thời gian bị chậm so với lịch hẹn khám</div>
-                    </div>
+                    {{/each}}
                 </div>
             </div>
         </div>

@@ -6,13 +6,14 @@ const users=new Schema({
     password: String,
     name: String, 
     age: Number,
+    phone: String,
     gender: String,
     address: String,
     role: Number,
     description: String,
     stt: String,
 }, {
-    timestamp: true,
+    timestamps: true,
 })
 
 module.exports = mongoose.model('users', users)

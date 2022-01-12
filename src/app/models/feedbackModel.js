@@ -3,11 +3,12 @@ const Schema = mongoose.Schema
 
 const feedbacks=new Schema({
     username: String,
-    userrole: String, 
+    userrole: Number, 
     title: String,
     content: String,
+    rate: String,
 }, {
-    timestamp: true,
+    timestamps: true,
 })
 
 module.exports = mongoose.model('feedbacks', feedbacks)

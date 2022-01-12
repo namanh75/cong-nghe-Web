@@ -157,6 +157,11 @@ class siteController {
         }
     }
 
+    //logout
+    logout(req, res, next){
+        res.clearCookie('token').redirect('/')
+    }
+
 }
 
 module.exports = new siteController

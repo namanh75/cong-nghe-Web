@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 const methodOverride = require('method-override')
+const pascalCase=require('string-helper')
 const app = express()
 
 //public file
@@ -44,6 +45,16 @@ app.engine('handlebars', handlebars({
                 if(users[i].role==3) count+=1
             }
             return count
+        },
+        stt: function(index){  
+            return index+=1
+        },
+        gettime: function(){
+            return new Date()
+        },
+        cuttime: function(stringtime){
+            var time=pascalCase(stringtime)
+            return time.slice(0, 25)
         }
     }
 }))
