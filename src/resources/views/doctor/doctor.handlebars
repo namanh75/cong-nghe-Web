@@ -21,9 +21,9 @@
             <span>r</span>
         </h1>
         
-        {{#each doctors}}
+        {{#each doctors as |value key|}}
         <div class="box">
-            <img src="/image/bs{{@index}}.jpg" alt="">
+            <img src="/image/bs{{count key}}.jpg" alt="">
             <h3>{{this.name}}</h3>
             <p>{{this.description}}</p>
             <div class="stars">

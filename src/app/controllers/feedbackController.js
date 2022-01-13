@@ -57,7 +57,8 @@ class feedbackController {
         }
         else {
             res.render('site/page404', {
-                massage: 'Chưa đăng nhập vào hệ thống, hãy đăng nhập!!!'
+                massage: 'Chưa đăng nhập vào hệ thống, hãy đăng nhập!!!',
+                layout: false
             })
         }
     }

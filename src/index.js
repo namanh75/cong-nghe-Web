@@ -51,21 +51,13 @@ app.engine('handlebars', handlebars({
             return count
         },
         //count start 1
-        stt: function(index){  
+        count: function(index){  
             return index+=1
         },
         //get time
         gettime: function(){
             return new Date()
         },
-        //new
-        new: function(arr){
-            for(var i = arr.length-1; i >= arr.length-10; i--){
-                arr[i] = 1;
-            }
-            return 0;
-        }
-
     }
 }))
 app.set('view engine', 'handlebars') //đuôi file là handlebar
