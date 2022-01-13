@@ -1,5 +1,6 @@
 const user = require('../models/userModel')
 const jwt = require('jsonwebtoken')
+const feedback = require('../models/feedbackModel')
 
 class siteController {
 
@@ -120,17 +121,22 @@ class siteController {
                     user.findOne({ account: data.account })
                         .then(userdata => {
                             if (userdata.role == 3) {
-                                user.find({}).then(users => {
-                                    users = users.map(user => user.toObject())
-                                    res.render('site/adminpage', {
-                                        users
-                                    })
-                                }).catch(err => {
-                                    console.log(err)
-                                    res.render('site/page404', {
-                                        layout: false,
-                                        massage: "Có lỗi xảy ra với sever"
-                                    })
+                                var userQuery = user.where({}).sort({ "_id": -1 }).find({})
+                                userQuery.limit(15).find(function (err, users) {
+                                    if (err) console.log(err)
+                                    else {
+                                        users = users.map(user => user.toObject())
+                                        var feedbackQuery = feedback.where({}).sort({"_id": -1 }).find({})
+                                        feedbackQuery.limit(10).find(function (err, feedbacks) {
+                                            if (err) console.log(err)
+                                            else {
+                                                feedbacks = feedbacks.map(feedback => feedback.toObject())
+                                                res.render('site/adminpage', {
+                                                    users, feedbacks
+                                                })
+                                            }
+                                        })
+                                    }
                                 })
 
                             }
@@ -143,7 +149,7 @@ class siteController {
                             console.log(err)
                             res.render('site/page404', {
                                 layout: false,
-                                massage: "Không tìm thấy tài khoản trên hệ thống, hãy thử đăng nhập lại hoặc tạo tài khoảng mới"
+                                massage: "Có lỗi trên sever"
                             })
                         })
                 }
@@ -158,7 +164,7 @@ class siteController {
     }
 
     //logout
-    logout(req, res, next){
+    logout(req, res, next) {
         res.clearCookie('token').redirect('/')
     }
 

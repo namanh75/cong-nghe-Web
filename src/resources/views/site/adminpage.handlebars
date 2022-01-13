@@ -26,7 +26,7 @@
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total User</div>
+                        <div class="box-topic">Total user</div>
                         <div class="number">{{counteruser users}}</div>
                         <div class="indicator">
                             <i class='bx bx-up-arrow-alt'></i>
@@ -60,22 +60,24 @@
 
             <div class="accounts-boxes">
                 <div class="recent-accounts box">
-                    <div class="title"><b>Details Accounts</b></div>
+                    <div class="title"><b>Recently registered account</b></div>
                     <div class="accounts-details">
                         <ul class="details">
                             <li class="topic"><b>Account</b> </li>
-                            {{#each users}}
+                            {{#each users as |value key|}}
+
                             <li><a href="#">{{this.account}}</a></li>
+
                             {{/each}}
                         </ul>
                         <ul class="details">
-                            <li class="topic"><b>Name</b></li>
+                            <li class="topic"><b>User name</b></li>
                             {{#each users}}
                             <li><a href="#">{{this.name}}</a></li>
                             {{/each}}
                         </ul>
                         <ul class="details">
-                            <li class="topic"><b>Role</b></li>
+                            <li class="topic"><b>role</b></li>
                             {{#each users}}
                             <li><a href="/admin" class="role">{{changerole this.role}}</a></li>
                             {{/each}}
@@ -86,38 +88,14 @@
                     </div> --}}
                 </div>
                 <div class="recent-feedbacks box">
-                    <div class="title"><b>Recent Feedbacks</b></div>
+                    <div class="title"><b>recently feedbacks</b></div>
                     <ul class="recent-feedbacks-details">
+                        {{#each feedbacks}}
                         <li>
-                            <a href="#">
-                                <span class="name">Đặng Tuấn Khang</span>
-                            </a>
-                            <span class="feedback">Hài lòng với dịch vụ</span>
+                            <span class="name"> {{this.username}} ({{changerole this.userrole}}): {{this.content}}</span>
+                            {{!-- <span class="feedback"></span> --}}
                         </li>
-                        <li>
-                            <a href="#">
-                                <span class="name">Vũ Tuệ Nhi</span>
-                            </a>
-                            <span class="feedback">Tạm được</span>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="name">Nguyễn Hải Đăng</span>
-                            </a>
-                            <span class="feedback">Không ổn</span>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="name">Trần Anh Khoa</span>
-                            </a>
-                            <span class="feedback">Khá hài lòng</span>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="name">Phạm Nhật Tân</span>
-                            </a>
-                            <span class="feedback">Oke</span>
-                        </li>
+                        {{/each}}
                     </ul>
                 </div>
             </div>

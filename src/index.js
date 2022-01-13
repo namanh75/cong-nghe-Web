@@ -23,7 +23,7 @@ app.engine('handlebars', handlebars({
         //change role
         changerole: function(role){
             if(role == 1) return 'User'
-            if(role == 2) return 'Doctors'
+            if(role == 2) return 'Doctor'
             if(role == 3) return 'Admin'
         },
         //count user
@@ -58,6 +58,14 @@ app.engine('handlebars', handlebars({
         gettime: function(){
             return new Date()
         },
+        //new
+        new: function(arr){
+            for(var i = arr.length-1; i >= arr.length-10; i--){
+                arr[i] = 1;
+            }
+            return 0;
+        }
+
     }
 }))
 app.set('view engine', 'handlebars') //đuôi file là handlebar
