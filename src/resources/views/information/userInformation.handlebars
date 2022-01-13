@@ -68,10 +68,9 @@
                 <i class="fas fa-times" id="off"></i>
                 <form action="/information?_method=PUT" method="POST">
                     <h3>Sửa thông tin</h3>
-                    <input type="text" class="box" placeholder="Tên tài khoản" name="account"
-                        value="{{userdata.account}}" readonly="true">
+                    <input type="text" class="box" placeholder="Tên tài khoản" name="account" value="{{userdata.account}}" readonly="true">
                     <input type="password" class="box" placeholder="Mật khẩu mới" value="{{userdata.password}}">
-                    <input type="text" class="box" placeholder="Họ và tên" name="name" value="{{userdata.name}}">
+                    <input type="text" class="box" placeholder="Họ và tên" name="name" value="{{userdata.name}}" readonly="true">
                     <input type="text" class="box" placeholder="Tuổi" name="age" value="{{userdata.age}}">
                     <input type="text" class="box" placehoder="Giới tính" name="gender" value="{{userdata.gender}}">
                     <input type="email" class="box" placeholder="Địa chỉ email" name="email" value="{{userdata.email}}">
