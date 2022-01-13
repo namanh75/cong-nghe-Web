@@ -36,11 +36,10 @@ Run sever: `npm run start`
 <!-- Run node-sass: `npm run scss` -->
 
 > ### Phân công nhóm 
-| STT | Họ và tên | Nhiệm vụ thực hiện | 
-| ----- | ---------- | -------------- |
-| 1 | Trần Nam Anh (nhóm trưởng) || 
-| 2 | Trần Tuấn Anh            || 
-| 3  | Hoàng Minh Lương            | | 
-| 4  | Nguyễn Tiến Đạt           || 
-
+| STT | Họ và tên                  | Nhiệm vụ thực hiện | 
+| --- | -------------------------- | -------------------|
+| 1   | Trần Nam Anh (nhóm trưởng) |lên ý tưởng, thiết kế UML, xử lý backend, chỉnh sửa database, test lỗi | 
+| 2   | Trần Tuấn Anh              |thiết kế UML, test lỗi, thiết kế slide thuyết trình | 
+| 3   | Hoàng Minh Lương           |đóng góp ý tưởng, thiết kế UI, xử lý database, test lỗi, hỗ trợ git| 
+| 4   | Nguyễn Tiến Đạt            |đóng góp ý tưởng, thiết kế UI, test lỗi| 
 
