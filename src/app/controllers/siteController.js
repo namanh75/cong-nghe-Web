@@ -41,7 +41,6 @@ class siteController {
                                             })
                                             res.redirect('/')
                                         }
-
                                     })
                                 })
                         })
@@ -122,12 +121,12 @@ class siteController {
                         .then(userdata => {
                             if (userdata.role == 3) {
                                 var userQuery = user.where({}).sort({ "_id": -1 }).find({})
-                                userQuery.limit(10).find(function (err, users) {
+                                userQuery.limit(15).find(function (err, users) {
                                     if (err) console.log(err)
                                     else {
                                         users = users.map(user => user.toObject())
                                         var feedbackQuery = feedback.where({}).sort({ "_id": -1 }).find({})
-                                        feedbackQuery.limit(5).find(function (err, feedbacks) {
+                                        feedbackQuery.limit(10).find(function (err, feedbacks) {
                                             if (err) console.log(err)
                                             else {
                                                 user.where({ role: 1 }).count(function (err, countuser) {

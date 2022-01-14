@@ -8,10 +8,39 @@ class feedbackController {
     system(req, res, next) {
         feedback.find({})
             .then(feedbacks => {
-                feedbacks=feedbacks.map(feedback => feedback.toObject())
-                res.render("feedback/system", {
-                    feedbacks: feedbacks
-                })
+                feedbacks = feedbacks.map(feedback => feedback.toObject())
+                if (req.cookies.token)
+                    jwt.verify(req.cookies.token, "nhom21", function (err, data) {
+                        if (err) {
+                            console.log(err)
+                            res.render('site/page404', {
+                                massage: 'xác thực tài khoản thất bại'
+                            })
+                        }
+                        else {
+                            user.findOne({ account: data.account }, function (err, userdata) {
+                                if (err) {
+                                    console.log(err)
+                                    res.render('site/page404', {
+                                        massage: 'có lỗi xảy ra ở sever'
+                                    })
+                                }
+                                else {
+                                    userdata = userdata ? userdata.toObject() : userdata
+                                    res.render("feedback/system", {
+                                        feedbacks: feedbacks,
+                                        userdata
+                                    })
+                                }
+
+                            })
+                        }
+                    })
+                else {
+                    res.render("feedback/system", {
+                        feedbacks: feedbacks
+                    })
+                }
             })
             .catch(err => {
                 console.error(err)
@@ -43,8 +72,8 @@ class feedbackController {
                                 })
                                 .catch(err => {
                                     console.log(err)
-                                    res.render('site/page404',{
-                                        massage:'có lỗi xảy ra ở sever'
+                                    res.render('site/page404', {
+                                        massage: 'có lỗi xảy ra ở sever'
                                     })
                                 })
                         })
