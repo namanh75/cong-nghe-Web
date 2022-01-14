@@ -122,17 +122,24 @@ class siteController {
                         .then(userdata => {
                             if (userdata.role == 3) {
                                 var userQuery = user.where({}).sort({ "_id": -1 }).find({})
-                                userQuery.limit(100).find(function (err, users) {
+                                userQuery.limit(10).find(function (err, users) {
                                     if (err) console.log(err)
                                     else {
                                         users = users.map(user => user.toObject())
-                                        var feedbackQuery = feedback.where({}).sort({"_id": -1 }).find({})
+                                        var feedbackQuery = feedback.where({}).sort({ "_id": -1 }).find({})
                                         feedbackQuery.limit(5).find(function (err, feedbacks) {
                                             if (err) console.log(err)
                                             else {
-                                                feedbacks = feedbacks.map(feedback => feedback.toObject())
-                                                res.render('site/adminpage', {
-                                                    users, feedbacks
+                                                user.where({ role: 1 }).count(function (err, countuser) {
+                                                    user.where({ role: 2 }).count(function (err, countdoctor) {
+                                                        user.where({ role: 3 }).count(function (err, countadmin) {
+                                                            feedbacks = feedbacks.map(feedback => feedback.toObject())
+                                                            res.render('site/adminpage', {
+                                                                users, feedbacks,
+                                                                countuser, countdoctor, countadmin
+                                                            })
+                                                        })
+                                                    })
                                                 })
                                             }
                                         })

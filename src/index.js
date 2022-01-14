@@ -26,30 +26,6 @@ app.engine('handlebars', handlebars({
             if(role == 2) return 'Doctor'
             if(role == 3) return 'Admin'
         },
-        //count user
-        counteruser: function(users){
-            var count = 0
-            for(var i = 0; i < users.length; i++){
-                if(users[i].role==1) count+=1
-            }
-            return count
-        },
-        //count doctor
-        counterdoctor: function(users){
-            var count = 0
-            for(var i = 0; i < users.length; i++){
-                if(users[i].role==2) count+=1
-            }
-            return count
-        },
-        //count admin
-        counteradmin: function(users){
-            var count = 0
-            for(var i = 0; i < users.length; i++){
-                if(users[i].role==3) count+=1
-            }
-            return count
-        },
         //count start 1
         count: function(index){  
             return index+=1
