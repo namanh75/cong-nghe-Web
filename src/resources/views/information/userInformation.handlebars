@@ -72,7 +72,12 @@
                     <input type="password" class="box" placeholder="Mật khẩu mới" value="{{userdata.password}}">
                     <input type="text" class="box" placeholder="Họ và tên" name="name" value="{{userdata.name}}" readonly="true">
                     <input type="text" class="box" placeholder="Tuổi" name="age" value="{{userdata.age}}">
-                    <input type="text" class="box" placehoder="Giới tính" name="gender" value="{{userdata.gender}}">
+                    <select class="box" placeholder="Giới tính" name="gender">
+                        <option>Lựa chọn giới tính</option>
+                        <option value="Nam" class="box">Nam</option>
+                        <option value="Nữ" class="box">Nữ</option>
+                    </select>
+                    {{!-- <input type="text" class="box" placehoder="Giới tính"  > --}}
                     <input type="email" class="box" placeholder="Địa chỉ email" name="email" value="{{userdata.email}}">
                     <input type="tel" class="box" placeholder="Số điện thoại" name="phone" value="{{userdata.phone}}">
                     <input type="text" class="box" placeholder="Địa chỉ" name="address" value="{{userdata.address}}">
