@@ -13,7 +13,7 @@ let formClosee = document.querySelector('#form-closee');
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 
-window.onscroll = () =>{
+window.onscroll = () => {
     searchBtn.classList.remove('fa-times');
     searchBar.classList.remove('active');
     menu.classList.remove('fa-times');
@@ -22,28 +22,28 @@ window.onscroll = () =>{
     regForm.classList.remove('active');
 }
 
-menu.addEventListener('click', () =>{
+menu.addEventListener('click', () => {
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
 });
 
-searchBtn.addEventListener('click', () =>{
+searchBtn.addEventListener('click', () => {
     searchBtn.classList.toggle('fa-times');
     searchBar.classList.toggle('active');
 });
 
-formBtn.addEventListener('click', () =>{
+formBtn.addEventListener('click', () => {
     loginForm.classList.add('active');
 });
 
-formClose.addEventListener('click', () =>{
+formClose.addEventListener('click', () => {
     loginForm.classList.remove('active');
 });
 
-regBtn.addEventListener('click', () =>{
+regBtn.addEventListener('click', () => {
     regForm.classList.add('active');
 });
-formClosee.addEventListener('click', () =>{
+formClosee.addEventListener('click', () => {
     regForm.classList.remove('active');
 })
 
